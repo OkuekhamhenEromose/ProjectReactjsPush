@@ -25,7 +25,7 @@ const Layout = ({ onSelectProject }) => {
       description: 'Todo list with priority levels',
       color: 'from-purple-500 to-purple-600',
       icon: '✓',
-      available: false
+      available: true
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const Layout = ({ onSelectProject }) => {
       description: 'Track your spending habits',
       color: 'from-green-500 to-green-600',
       icon: '💰',
-      available: false
+      available: true
     },
     {
       id: 6,
