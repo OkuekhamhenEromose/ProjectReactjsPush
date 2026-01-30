@@ -1,128 +1,127 @@
 // Layout Component - Project Portfolio
 
-
 const Layout = ({ onSelectProject }) => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Filter App',
-      description: 'Product filtering with cart functionality',
-      color: 'from-blue-500 to-blue-600',
-      icon: '🛍️',
-      available: true
+      title: "E-Commerce Filter App",
+      description: "Product filtering with cart functionality",
+      color: "from-blue-500 to-blue-600",
+      icon: "🛍️",
+      available: true,
     },
     {
       id: 2,
-      title: 'Weather Dashboard',
-      description: 'Real-time weather forecast app',
-      color: 'from-sky-500 to-sky-600',
-      icon: '🌤️',
-      available: false
+      title: "Weather Dashboard",
+      description: "Real-time weather forecast app",
+      color: "from-sky-500 to-sky-600",
+      icon: "🌤️",
+      available: false,
     },
     {
       id: 3,
-      title: 'Task Manager',
-      description: 'Todo list with priority levels',
-      color: 'from-purple-500 to-purple-600',
-      icon: '✓',
-      available: true
+      title: "Task Manager",
+      description: "Todo list with priority levels",
+      color: "from-purple-500 to-purple-600",
+      icon: "✓",
+      available: true,
     },
     {
       id: 4,
-      title: 'Recipe Finder',
-      description: 'Search and save your recipes',
-      color: 'from-orange-500 to-orange-600',
-      icon: '🍳',
-      available: false
+      title: "Recipe Finder",
+      description: "Search and save your recipes",
+      color: "from-orange-500 to-orange-600",
+      icon: "🍳",
+      available: false,
     },
     {
       id: 5,
-      title: 'Expense Tracker',
-      description: 'Track your spending habits',
-      color: 'from-green-500 to-green-600',
-      icon: '💰',
-      available: true
+      title: "Expense Tracker",
+      description: "Track your spending habits",
+      color: "from-green-500 to-green-600",
+      icon: "💰",
+      available: true,
     },
     {
       id: 6,
-      title: 'Music Player',
-      description: 'Stream your favorite songs',
-      color: 'from-pink-500 to-pink-600',
-      icon: '🎵',
-      available: false
+      title: "Currency Converter",
+      description: "Real-time exchange rates",
+      color: "from-pink-500 to-pink-600",
+      icon: "💱",
+      available: true,
     },
     {
       id: 7,
-      title: 'Fitness Tracker',
-      description: 'Log workouts and progress',
-      color: 'from-red-500 to-red-600',
-      icon: '💪',
-      available: false
+      title: "Fitness Tracker",
+      description: "Log workouts and progress",
+      color: "from-red-500 to-red-600",
+      icon: "💪",
+      available: false,
     },
     {
       id: 8,
-      title: 'Chat Application',
-      description: 'Real-time messaging platform',
-      color: 'from-indigo-500 to-indigo-600',
-      icon: '💬',
-      available: false
+      title: "Chat Application",
+      description: "Real-time messaging platform",
+      color: "from-indigo-500 to-indigo-600",
+      icon: "💬",
+      available: true,
     },
     {
       id: 9,
-      title: 'Photo Gallery',
-      description: 'Organize and share photos',
-      color: 'from-yellow-500 to-yellow-600',
-      icon: '📷',
-      available: false
+      title: "Photo Gallery",
+      description: "Organize and share photos",
+      color: "from-yellow-500 to-yellow-600",
+      icon: "📷",
+      available: false,
     },
     {
       id: 10,
-      title: 'Blog Platform',
-      description: 'Write and publish articles',
-      color: 'from-teal-500 to-teal-600',
-      icon: '📝',
-      available: false
+      title: "Blog Platform",
+      description: "Write and publish articles",
+      color: "from-teal-500 to-teal-600",
+      icon: "📝",
+      available: false,
     },
     {
       id: 11,
-      title: 'Quiz App',
-      description: 'Interactive trivia games',
-      color: 'from-cyan-500 to-cyan-600',
-      icon: '🎯',
-      available: false
+      title: "Quiz App",
+      description: "Interactive trivia games",
+      color: "from-cyan-500 to-cyan-600",
+      icon: "🎯",
+      available: false,
     },
     {
       id: 12,
-      title: 'Calendar Scheduler',
-      description: 'Manage events and meetings',
-      color: 'from-violet-500 to-violet-600',
-      icon: '📅',
-      available: false
+      title: "Calendar Scheduler",
+      description: "Manage events and meetings",
+      color: "from-violet-500 to-violet-600",
+      icon: "📅",
+      available: false,
     },
     {
       id: 13,
-      title: 'Movie Database',
-      description: 'Browse and rate movies',
-      color: 'from-rose-500 to-rose-600',
-      icon: '🎬',
-      available: false
+      title: "Movie Database",
+      description: "Browse and rate movies",
+      color: "from-rose-500 to-rose-600",
+      icon: "🎬",
+      available: false,
     },
     {
       id: 14,
-      title: 'Note Taking App',
-      description: 'Organize your thoughts',
-      color: 'from-amber-500 to-amber-600',
-      icon: '📓',
-      available: false
+      title: "Note Taking App",
+      description: "Organize your thoughts",
+      color: "from-amber-500 to-amber-600",
+      icon: "📓",
+      available: true,
     },
     {
       id: 15,
-      title: 'Portfolio Website',
-      description: 'Showcase your work',
-      color: 'from-emerald-500 to-emerald-600',
-      icon: '🎨',
-      available: false
-    }
+      title: "Portfolio Website",
+      description: "Showcase your work",
+      color: "from-emerald-500 to-emerald-600",
+      icon: "🎨",
+      available: false,
+    },
   ];
 
   return (
@@ -144,7 +143,9 @@ const Layout = ({ onSelectProject }) => {
               onClick={() => project.available && onSelectProject(project.id)}
               disabled={!project.available}
               className={`relative group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
-                project.available ? 'cursor-pointer' : 'cursor-not-allowed opacity-60'
+                project.available
+                  ? "cursor-pointer"
+                  : "cursor-not-allowed opacity-60"
               }`}
             >
               <div className={`bg-gradient-to-br ${project.color} p-6 h-full`}>

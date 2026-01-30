@@ -2,13 +2,13 @@
 // 🏗️ App Structure Overview
 // This app has 4 main parts:
 
-// Product Display - Showing items for sale
+//(A) Product Display - Showing items for sale
 
-// Shopping Cart - Holding selected items
+//(B) Shopping Cart - Holding selected items
 
-// Filters - Helping users find products
+//(C) Filters - Helping users find products
 
-// UI Controls - Buttons and interactions
+//(D) UI Controls - Buttons and interactions
 
 // 🧠 Core React Concepts Demonstrated
 // 1. State Management - The App's Memory
@@ -84,14 +84,14 @@
 // 🔍 Filter System Breakdown
 // Category Filter:
 // jsx
-// const categoryMatch = 
-//   filters.category === "all" || 
+// const categoryMatch =
+//   filters.category === "all" ||
 //   product.category === filters.category;
 // Shows all products OR only specific category
 
 // Price Filter:
 // jsx
-// const priceMatch = 
+// const priceMatch =
 //   product.price >= filters.priceRange[0] &&
 //   product.price <= filters.priceRange[1];
 // Only shows products within price range
@@ -194,6 +194,22 @@
 // Props = Instructions passed between sections
 
 // Events = Customer actions (clicking, filtering, adding to cart)
+
+// ===============================  CODE STRUCTURE ===============================
+// (1a) Imports
+// (2) FunctionV ECommerceApp(props){
+// (2a) VuseState3
+// (2b) functionV useMemo{()return.filter(p){V,.category===||,V>=&&<=,return}.sort(p){2if(p){return}}[2dep]
+// (2c) functionV addToCart(p){call(p){V.find(p).id===}if(p){return.map(p){.id---?++:}}return[...]}
+// (2d) functionV removeFromCart(p){call(p).filter!==}
+// functionV updateQuantity(p,n){if(p===){call}else{call(p){.map(p){===?...:}}}}
+// (2e) V.reduce(p,n){++*,0}
+// (2f)V.reduce(p,n){+,0}
+// (2gi)jsx{<d.><h.><d.><d.><b,oncl.><i.><sp.></sp></b><h1.></h1></><b{oncl(!)}.><i>{v>0&&.<sp.>{v}</sp></b></></h>}
+// (2gii)jsx{<d.><d.><h2.></h2><d.><><lab.></lab><sel,val,onch.><op4><>/op4></sel><><lab.></lab><inp,ty,min,max,val,onch.><d/><><lab.></lab><sel,val,onch.><opt2></opt2></sel><d/></><d/>}
+// (2giii)<d.>{.map(p){<,key.><d.>{.image}</><h3.>{.name}</h3><p.>{.category}</p><d.><sp.>{.price}</sp><b,oncl.></b><d/><d/><d/>}
+// (2g1v){v.length===0&&<d.></d>}</d>
+// (2gv){showCart&&<d.><d.><d.><h2.></h2><b,oncl.><i></b></d><d.>{cart.length===0?(<p.></p>):(<><.map(p){<d.><d.>{.image}</d><d.><h3.>{.name}</h3><d.><b,oncl.></b><sp.>{.quantity}</sp><b,oncl.></b></d></d><d.><p.>{.price*.quantity}</p><b,oncl.></b></d></d>}<d.><d.><sp>Total:</sp><sp>${cartTotal.toFixed(2)}</sp></d><b></b></d></>)}</d></d></div>}
 
 
 
