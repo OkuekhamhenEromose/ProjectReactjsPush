@@ -369,10 +369,11 @@
 // =================================  CODE STRUCTURE  ========================================
 // (1) imports
 // (2) Cfunct TaskManagerApp(pr){
-// (2a) state([news]),4states
-// (2b) Cfunct moveTask(pr){setTasks(=>,V.find,V.filter,V...,return{...,2[]})}
-// (2c) Cfunct addTask{if(!.trim),return,V{4obj},call{...,[]:[...]}2calls}
-// (2d) Cfunct deleteTask(pr){setTask(=>({...,[]:.filter})}
+// (2ia) state[v][setm]{Ar3obj}
+// (2a) 4state([v][setm])
+// (2b) Cfunct moveTask(3p){callm(=>{V[].find,V[].filter,V[...],return{...,2[]}})}
+// (2c) Cfunct addTask(){if(!.trim)return,V{4obj},callm(=>({...,[]:[...]}))2callm}
+// (2d) Cfunct deleteTask(2p){callm(=>({...,[]:.filter})}
 // (2e) V[id,title,color,icon]
 // (2f) V{3obj}
 // (2e) jsxreturn(
@@ -387,6 +388,60 @@
 
 import { useState } from 'react';
 import { X, ArrowLeft } from 'lucide-react';
+
+
+
+
+// const TaskManagerApp=({onBackToHome})=>{
+//   const [tasks, setTasks] = useState({
+//     todo : [
+//       {id: 1, text: blue, priority: medium, createdAt: new Date()}
+//     ]
+//   })
+//   const [newTaskText, setNewTaskText] = useState('')
+//   const [newTaskPriority, setNewTaskPriority] = useState('medium')
+//   const [newTaskColumn, setNewTaskColumn]= useState('todo')
+//   const [showAddTask, setShowAddTask] = useState(false)
+
+//   const moveTask = (taskId,fromColumn,toColumn)=>{
+//     setTasks(prex=>{
+//       const task = [fromColumn].find(t=>t.id===taskId)
+//       const newFromColumn = [fromColumn].filter(t=>t.id !== taskId)
+//       const newToColumn = [...prev[toColumn,[...task]]]
+//       return(
+//         ...prev,
+//         [fromColumn]: [newFromColumn],
+//         [toColumn]: newToColumn
+//       )
+//     })
+//   }
+//   const addTask = ()=>{
+//     if(!newTaskText.trim()) return
+//     const newTask = {
+//       id: Date.now(),
+//       priority: newTaskPriority,
+//       text: newTaskText,
+//       createdAt: new Date()
+//     }
+//     setTasks(prev=>({
+//       ...prev[newTaskColumn]:[...newTask]
+//     }))
+//     setNewTaskText('')
+//     setShowAddTask(false)
+//   }
+//   const deleteTask =(taskId,fromColumn)=>{
+//     setTasks(prev=>({
+//       ...prev[fromColumn:[fromColumn].filter(t=>t.id!==taskId)]
+//     }))
+//   }
+
+
+
+// }
+
+// export default TaskManagerApp;
+
+
 
 const TaskManagerApp = ({ onBackToHome }) => {
   const [tasks, setTasks] = useState({
@@ -411,7 +466,7 @@ const TaskManagerApp = ({ onBackToHome }) => {
     setTasks(prev => {
       const task = prev[fromColumn].find(t => t.id === taskId);
       const newFromColumn = prev[fromColumn].filter(t => t.id !== taskId);
-      const newToColumn = [...prev[toColumn], {...task, status: toColumn}];
+      const newToColumn = [...prev[toColumn], {...task}]
       
       return {
         ...prev,
@@ -428,7 +483,6 @@ const TaskManagerApp = ({ onBackToHome }) => {
       id: Date.now(),
       text: newTaskText,
       priority: newTaskPriority,
-      status: newTaskColumn,
       createdAt: new Date()
     };
     
