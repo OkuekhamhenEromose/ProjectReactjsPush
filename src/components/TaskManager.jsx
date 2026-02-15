@@ -371,9 +371,9 @@
 // (2) Cfunct TaskManagerApp(pr){
 // (2ia) state[v][setm]{Ar3obj}
 // (2a) 4state([v][setm])
-// (2b) Cfunct moveTask(3p){callm(=>{V[].find,V[].filter,V[...],return{...,2[]}})}
-// (2c) Cfunct addTask(){if(!.trim)return,V{4obj},callm(=>({...,[]:[...]}))2callm}
-// (2d) Cfunct deleteTask(2p){callm(=>({...,[]:.filter})}
+// (2b) Vfunct moveTask(3p){callm(=>{V[].find,V[].filter,V[...],return{...,2[]}})}
+// (2c) Vfunct addTask(){if(!.trim)return,V{4obj},callm(=>({...,[]:[...]}))2callm}
+// (2d) Vfunct deleteTask(2p){callm(=>({...,[]:.filter})}
 // (2e) V[id,title,color,icon]
 // (2f) V{3obj}
 // (2e) jsxreturn(

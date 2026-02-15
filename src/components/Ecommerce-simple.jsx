@@ -408,13 +408,14 @@
 
 // ===============================  CODE STRUCTURE ===============================
 // (1a) Imports
-// (2) FunctionV ECommerceApp(props){
-// (2a) VuseState3
-// (2b) functionV useMemo{()return.filter(p){V,.category===||,V>=&&<=,return}.sort(p){2if(p){return}}[2dep]
-// (2c) functionV addToCart(p){call(p){V.find(p).id===}if(p){return.map(p){.id---?++:}}return[...]}
-// (2d) functionV removeFromCart(p){call(p).filter!==}
-// functionV updateQuantity(p,n){if(p===){call}else{call(p){.map(p){===?...:}}}}
-// (2e) V.reduce(p,n){++*,0}
+// (2) FunctionV ECommerceApp(pr){
+// (2a) state[v][setm]{Ar3obj}
+// (2a) 3state([v][setm])
+// (2b) Vfunct useMemo{()return.filter(p){V,.category===||,V>=&&<=,return}.sort(p){2if(p){return}}[2dep]
+// (2c) Vfunct addToCart(p){callm(p){V.find(p).id===}if(p){return.map(p){.id---?++:}}return[...]}
+// (2d) functionV removeFromCart(p){callm(p).filter!==}
+// functionV updateQuantity(2p){if(p===){call(p)}else{call(p){.map(p){===?...:}}}}
+// (2e) V.reduce(2p){++*,0}
 // (2f)V.reduce(p,n){+,0}
 // (2gi)jsx{<d.><h.><d.><d.><b,oncl.><i.><sp.></sp></b><h1.></h1></><b{oncl(!)}.><i>{v>0&&.<sp.>{v}</sp></b></></h>}
 // (2gii)jsx{<d.><d.><h2.></h2><d.><><lab.></lab><sel,val,onch.><op4><>/op4></sel><><lab.></lab><inp,ty,min,max,val,onch.><d/><><lab.></lab><sel,val,onch.><opt2></opt2></sel><d/></><d/>}
@@ -488,11 +489,9 @@ const ECommerceApp = ({ onBackToHome }) => {
   const filteredProducts = useMemo(() => {
     return products
       .filter((product) => {
-        const categoryMatch =
-          filters.category === "all" || product.category === filters.category;
-        const priceMatch =
-          product.price >= filters.priceRange[0] &&
-          product.price <= filters.priceRange[1];
+        const categoryMatch = filters.category === "all" || product.category === filters.category;
+          
+        const priceMatch = product.price >= filters.priceRange[0] && product.price <= filters.priceRange[1];          
         return categoryMatch && priceMatch;
       })
       .sort((a, b) => {
@@ -507,9 +506,7 @@ const ECommerceApp = ({ onBackToHome }) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item  
         );
       }
       return [...prev, { ...product, quantity: 1 }];
