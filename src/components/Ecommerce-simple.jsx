@@ -195,7 +195,6 @@
 
 // Events = Customer actions (clicking, filtering, adding to cart)
 
-
 // ======================  GROK  =====================
 
 // As a senior React developer, software architect, and JavaScript instructor with extensive experience in building scalable e-commerce applications (including those handling real-time inventory, user sessions, and performance optimizations), I'll provide a comprehensive, step-by-step explanation of the code logic for this ECommerceApp component. This is a self-contained React functional component that implements a basic e-commerce storefront with product listing, filtering/sorting, a shopping cart sidebar, and basic cart management. It's styled with Tailwind CSS classes and uses Lucide icons for UI elements. The app simulates a store with hardcoded products (no backend), focusing on frontend logic.
@@ -423,8 +422,6 @@
 // (2g1v){v.length===0&&<d.></d>}</d>
 // (2gv){showCart&&<d.><d.><d.><h2.></h2><b,oncl.><i></b></d><d.>{cart.length===0?(<p.></p>):(<><.map(p){<d.><d.>{.image}</d><d.><h3.>{.name}</h3><d.><b,oncl.></b><sp.>{.quantity}</sp><b,oncl.></b></d></d><d.><p.>{.price*.quantity}</p><b,oncl.></b></d></d>}<d.><d.><sp>Total:</sp><sp>${cartTotal.toFixed(2)}</sp></d><b></b></d></>)}</d></d></div>}
 
-
-
 import { useState, useMemo } from "react";
 import { ShoppingCart, X, ArrowLeft } from "lucide-react";
 
@@ -489,9 +486,12 @@ const ECommerceApp = ({ onBackToHome }) => {
   const filteredProducts = useMemo(() => {
     return products
       .filter((product) => {
-        const categoryMatch = filters.category === "all" || product.category === filters.category;
-          
-        const priceMatch = product.price >= filters.priceRange[0] && product.price <= filters.priceRange[1];          
+        const categoryMatch =
+          filters.category === "all" || product.category === filters.category;
+
+        const priceMatch =
+          product.price >= filters.priceRange[0] &&
+          product.price <= filters.priceRange[1];
         return categoryMatch && priceMatch;
       })
       .sort((a, b) => {
@@ -506,7 +506,9 @@ const ECommerceApp = ({ onBackToHome }) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item  
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
         );
       }
       return [...prev, { ...product, quantity: 1 }];
@@ -523,15 +525,15 @@ const ECommerceApp = ({ onBackToHome }) => {
     } else {
       setCart((prev) =>
         prev.map((item) =>
-          item.id === productId ? { ...item, quantity: newQuantity } : item
-        )
+          item.id === productId ? { ...item, quantity: newQuantity } : item,
+        ),
       );
     }
   };
 
   const cartTotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -735,5 +737,3 @@ const ECommerceApp = ({ onBackToHome }) => {
 };
 
 export default ECommerceApp;
-
-
